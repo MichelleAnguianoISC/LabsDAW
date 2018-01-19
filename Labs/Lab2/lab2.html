@@ -1,0 +1,488 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<title>Lab 2</title>
+	<link rel="stylesheet" type="text/css" href="styles.css">
+	<link href="https://fonts.googleapis.com/css?family=Delius|Delius+Unicase" rel="stylesheet">
+</head>
+<body>
+	<header>Laboratorio 2: CSS</header>
+	<p><strong>Michelle Fernanda Anguiano Juárez</strong></p>
+	<p>A01209529</p>
+	<p>A01209529@itesm.mx | michanguiano@gmail.com</p>
+	<p>
+		<img src="images\michelle.jpg" width= "565" height= "370" border="0" />
+	</p>
+	<table>
+		<thead>
+			<tr>
+				<th colspan="2">Sobre mí</th>
+			</tr>
+		</thead>
+		<!--<tfoot>
+			<tr>
+				<td>Footer 1</td>
+				<td>Footer 2</td>
+			</tr>
+		</tfoot>-->
+		<tbody>
+			<tr>
+				<td>
+					<img src="images\emmaMichelle.jpg" height="565" width="370" border="0" />
+				</td>
+				<td>
+					<ul>Nací y crecí en San Miguel de Allende, Guanajuato el 29 de abril de 1996.</ul>
+					<ul>Desde pequeña practico muchos deportes, desde: natación, fútbol, basquetbol, tenis, hasta cinta negra en Tae Kwon Do, pero mi mayor pasión es jugar voleibol, por lo que entrando a preparatoria se convirtió en mi actividad física favorita.</ul>
+					<ul>Actualmente estudio Ingeniería en Sistemas Computacionales en el Tecnológico de Monterrey, Campus Querétaro.</ul>
+					<ul>Mi principal meta profesional es crear un sistema para la empresa de transportaciones y tours de mis papás, la cual automatice todos los procesos administrativos dentro de ella, facilitando así su trabajo.</ul>
+					<ul>Tengo una bebé de dos años, a la que amo con todo mi corazón y por la cual daría mi vida. Es mi principal motivación de salir adelante cada día.</ul>
+					<ul>
+						<form>
+  							Fecha:<br>
+							<input type="Date" name="date"><br>
+							<input type="submit" value="Submit">
+						</form>
+					</ul>
+					<ul>
+						<form>
+  							Correo:<br>
+							<input type="email" placeholder="name@domain.com" name="email"><br>
+							<input type="submit" value="Submit">
+						</form>
+					</ul>
+				</td>
+			</tr>
+		</tbody>
+	</table><br/>
+	<div class="importantInfo">
+		<h3 class="info">Información Importante</h3>
+		<li><strong>URL</strong>: También conocida como Uniform Resource Locator, es una forma de identificador uniforme de recursos y es una convención de nomenclatura estandarizada para abordar documentos accesibles a través de Internet e Intranet. Un ejemplo de una URL es https://www.computerhope.com/, que es la URL del sitio web de Computer Hope.<a href="#b1">[1]</a></li><br/>
+		<li><strong>MIME</strong>: significa Extensiones Multipropósito de Correo de Internet. El objetivo de MIME es permitir el uso de una amplia variedad de tipos de medios a través del correo de Internet. El Grupo de trabajo de la Fuerza de trabajo de ingeniería de Internet (IETF) definió el estándar para MIME en 1992.<a href="#b2">[2]</a></li><br/>
+		<li id="metodosHTTP">
+			<strong>Métodos HTTP</strong>:
+			<ol>- <strong>POST</strong>: Aunque se puedan enviar datos a través del método GET, en muchos casos se utiliza POST por las limitaciones de GET. En caso de respuesta positiva devuelve 201 (<i>created</i>). Los POST requests se envían normalmente con formularios. Rellenar el formulario anterior crea un HTTP request, el contenido va en el <i>body</i> del <i>request</i>, no aparece nada en la URL, aunque se envía en el mismo formato que con el método GET. Si se quiere enviar texto largo o cualquier tipo de archivo este es el método apropiado. Le siguen los headers, donde se incluyen algunas líneas específicas con información de los datos enviados, a los headers le siguen una <i>línea en blanco</i> y a continuación el <i>contenido del request.</i>[3]</ol>
+			<ol>- <strong>GET</strong>: se emplea para leer una representación de un <i>resource</i>. En caso de respuesta positiva (200 OK), GET devuelve la representación en un formato concreto: HTML, XML, JSON o imágenes, JavaScript, CSS, etc. En caso de respuesta negativa devuelve 404 (<i>not found</i>) o 400 (<i>bad request</i>). Los formularios también pueden usarse con el método GET, donde se añaden los <i>keys</i> y <i>values</i> buscados a la URL del header[3]</ol>
+			<ol>- <strong>PUT</strong>: Utilizado normalmente para <i>actualizar contenidos</i>, pero también pueden <i>crearlos</i>. Tampoco muestra ninguna información en la URL. En caso de éxito devuelve 201 (created, en caso de que la acción haya creado un elemento) o 204 (no response, si el servidor no devuelve ningún contenido). A diferencia de POST es <i>idempotente</i>, si se crea o edita un resource con PUT y se hace el mismo request otra vez, el resource todavía está ahí y mantiene el mismo estado que en la primera llamada. Si con una llamada PUT se cambia aunque sea sólo un contador en el resource, la llamada ya no es idempotente, ya que se cambian contenidos.[3]</ol>
+			<ol>- <strong>DELETE</strong>: Simplemente elimina un <i>resource</i> identificado en la <i>URI</i>. Si se elimina correctamente devuelve 200 junto con un <i>body response</i>, o 204 sin <i>body</i>. DELETE, al igual que PUT y GET, también es <i>idempotente</i>.[3]</ol>
+			<ol>- <strong>HEAD</strong>: Es idéntico a GET, pero el servidor no devuelve el contenido en el <i>HTTP response</i>. Cuando se envía un <i>HEAD request</i>, significa que sólo se está interesado en el código de respuesta y los <i>headers HTTP</i>, no en el propio documento. Con este método el navegador puede comprobar si un documento se ha modificado, por razones de caching. Puede comprobar también directamente si el archivo existe. Por ejemplo, si tienes muchos enlaces en tu sitio web, puedes enviar un HEAD request a todos los enlaces para comprobar los que estén rotos. Es bastante más rápido que hacerlo con GET.[3]</ol>
+			<ol>- <strong>TRACE</strong>: El cuerpo del mensaje contiene el mensaje de solicitud recibido por el servidor.[4]</ol>
+			<ol>- <strong>PATCH</strong>: El método de solicitud HTTP PATCH aplica modificaciones parciales a un recurso. El método HTTP PUT ya está definido para sobrescribir un recurso con un nuevo cuerpo completo, y para el método POST no hay una forma estándar de descubrir el soporte de formato de parche. A diferencia de PUT, pero como POST, PATCH no es idempotente, lo que significa que sucesivas solicitudes de parches idénticos tendrán diferentes efectos.[13]</ol>
+		</li>
+		<li>
+				<strong>Códigos de estado de respuesta HTTP</strong>:
+				<ol><strong>Respuestas Informativas</strong></ol>
+				<ol><i><strong>100 Continue</strong></i>: Esta respuesta provisional indica que todo hasta ahora está bien y que el cliente debe continuar con la solicitud o ignorarla si ya está terminada.[4]</ol>
+				<ol><i><strong>101 Switching Protocol</strong></i>: Este código se envía en respuesta a un encabezado de solicitud <i>Upgrade</i> por el cliente e indica que el servidor acepta el cambio de protocolo propuesto por el agente de usuario.[4]</ol>
+				<ol><i><strong>102 Processing</strong></i> (WebDAV): Este código indica que el servidor ha recibido la solicitud y aún se encuentra procesandola, por lo que no hay respuesta disponible.[4]</ol>
+				<ol><strong>Respuestas Satisfactorias</strong></ol>
+				<ol id="metodo200">
+					<i><strong>200 OK</strong></i>: La solicitud ha tenido éxito.[4] Una respuesta 200 es almacenable de forma predeterminada.[15] El significado de un éxito varía dependiendo del método HTTP: 
+					<dd>- <strong>GET</strong>: el recurso ha sido recuperado y se transmite en el cuerpo del mensaje.</dd>
+					<dd>- <strong>HEAD</strong>: los encabezados de las entidades se encuentran en el cuerpo del mensaje.</dd>
+					<dd>- <strong>POST</strong>: el recurso que describe el resultado de la acción se transmite en el cuerpo del mensaje.</dd>
+					<dd>- <strong>TRACE</strong>: el cuerpo del mensaje contiene el mensaje de solicitud tal como lo recibió el servidor.[4][15]</dd>
+				</ol>
+				<ol><i><strong>201 Created</strong></i>: La solicitud ha tenido éxito y se ha creado un nuevo recurso como resultado de ello. Ésta es típicamente la respuesta enviada después de una petición PUT.[4]</ol>
+				<ol><i><strong>202 Accepted</strong></i>: La solicitud se ha recibido, pero aún no se ha actuado. Es una petición "Sin compromiso", lo que significa que no hay manera en HTTP que permita enviar una respuesta asíncrona que indique el resultado del procesamiento de la solicitud. Está pensado para los casos en que otro proceso o servidor maneja la solicitud, o para el procesamiento por lotes.[4]</ol>
+				<ol><i><strong>203 Non-Authoritative Information</strong></i>: La petición se ha completado con éxito, pero su contenido no se ha obtenido de la fuente originalmente solicitada, sino que se recoge de una copia local o de un tercero. Excepto esta condición, se debe preferir una respuesta de 200 OK en lugar de esta respuesta.[4]</ol>
+				<ol><i><strong>204 No Content</strong></i>: La petición se ha completado con éxito pero su respuesta no tiene ningún contenido, aunque los encabezados pueden ser útiles. El agente de usuario puede actualizar sus encabezados en caché para este recurso con los nuevos valores.[4]</ol>
+				<ol><i><strong>205 Reset Content</strong></i>: La petición se ha completado con éxito, pero su respuesta no tiene contenidos y además, el agente de usuario tiene que inicializar la página desde la que se realizó la petición, este código es útil por ejemplo para páginas con formularios cuyo contenido debe borrarse después de que el usuario lo envíe.[4]</ol>
+				<ol><i><strong>206 Partial Content</strong></i>: La petición servirá parcialmente el contenido solicitado. Esta característica es utilizada por herramientas de descarga como wget para continuar la transferencia de descargas anteriormente interrumpidas, o para dividir una descarga y procesar las partes simultáneamente.[4]</ol>
+				<ol><i><strong>207 Multi-Status</strong></i> (WebDAV): Una respuesta Multi-Estado transmite información sobre varios recursos en situaciones en las que varios códigos de estado podrían ser apropiados. El cuerpo de la petición es un mensaje XML.[4]</ol>
+				<ol><i><strong>208 Multi-Status</strong></i> (WebDAV): El listado de elementos DAV ya se notificó previamente, por lo que no se van a volver a listar.[4]</ol>
+				<ol><i><strong>226 IM Used</strong></i>: El servidor ha cumplido una petición GET para el recurso y la respuesta es una representación del resultado de una o más manipulaciones de instancia aplicadas a la instancia actual.[4]</ol>
+				<ol><strong>Redirecciones</strong></ol>
+				<ol><i><strong>300 Multiple Choice</strong></i>: La solicitud tiene más de una respuesta posible. Usuario-agente o usuario debe elegir uno de ellos. No hay una forma estandarizada de elegir una de las respuestas.[4]</ol>
+				<ol><i><strong>301 Moved Permanently</strong></i>: Este código de respuesta significa que el URI del recurso solicitado ha sido cambiado. Probablemente, se proporcionará un nuevo URI en la respuesta.[4]</ol>
+				<ol><i><strong>302 Found</strong></i>: Este código de respuesta significa que el URI del recurso solicitado ha sido cambiado <i>temporalmente</i>. Nuevos cambios en el URI podrían hacerse en el futuro. Por lo tanto, este mismo URI debe ser utilizado por el cliente en solicitudes futuras.[4]</ol>
+				<ol><i><strong>303 See Other</strong></i>: El servidor envió esta respuesta al cliente directivo para obtener el recurso solicitado a otro URI con una solicitud GET.[4]</ol>
+				<ol><i><strong>304 Not Modified</strong></i>: Esto se usa con fines de almacenamiento en caché. Le está diciendo al cliente que la respuesta no ha sido modificada. Entonces, el cliente puede continuar usando la misma versión de respuesta en caché.[4]</ol>
+				<ol><i><strong>305 Use Proxy</strong></i>: Se definió en una versión anterior de la especificación HTTP para indicar que un proxy debe tener acceso a una respuesta solicitada. Ha quedado obsoleto debido a problemas de seguridad con respecto a la configuración en banda de un proxy.[4]</ol>
+				<ol><i><strong>306 unused</strong></i>: Este código de respuesta ya no se usa, solo está reservado actualmente. Se usó en una versión anterior de la especificación HTTP 1.1.[4]</ol>
+				<ol><i><strong>307 Temporary Redirect</strong></i>: El servidor envió esta respuesta al cliente directivo para obtener el recurso solicitado a otro URI con el mismo método que utilizó la solicitud previa. Tiene la misma semántica que el <i>código 302 de respuesta HTTP encontrado</i>, con la excepción de que el agente de usuario <i>no debe cambiar</i> el método HTTP utilizado: si se utilizó un <i>POST</i> en la primera solicitud, se debe usar un <i>POST</i> en la segunda solicitud.[4]</ol>
+				<ol><i><strong>308 Permanent Redirect</strong></i>: Esto significa que el recurso está ahora permanentemente ubicado en otro URI, especificado por la <i>ubicación</i>: encabezado de respuesta HTTP. Tiene la misma semántica que el <i>301 código de respuesta HTTP movido permanentemente</i>, con la excepción de que el agente de usuario no debe cambiar el método HTTP utilizado: si se utilizó un <i>POST</i> en la primera solicitud, se debe usar un <i>POST</i> en la segunda solicitud.[4]</ol>
+				<ol><strong>Errores de cliente</strong></ol>
+				<ol><i><strong>400 Bad Request</strong></i>: Esta respuesta significa que el servidor no pudo entender la solicitud debido a una sintaxis no válida.[4]</ol>
+				<ol><i><strong>401 Unauthorized</strong></i>: La autenticación es necesaria para obtener la respuesta solicitada. Esto es similar a 403, pero en este caso, la autenticación es posible.[4]</ol>
+				<ol><i><strong>402 Payment Required</strong></i>: Este código de respuesta está reservado para uso futuro. El objetivo inicial para crear este código era usarlo para sistemas de pago digital, sin embargo, esto no se usa actualmente.[4]</ol>
+				<ol><i><strong>403 Forbidden</strong></i>: El cliente no tiene derechos de acceso al contenido, por lo que el servidor lo rechaza para dar la respuesta adecuada.[4]</ol>
+				<ol><i><strong>404 Not Found</strong></i>: El servidor no puede encontrar el recurso solicitado. Este código de respuesta probablemente sea el más famoso debido a su frecuencia en la web.[4]</ol>
+				<ol><i><strong>405 Method Not Allowed</strong></i>: El método de solicitud es conocido por el servidor pero se ha inhabilitado y no se puede usar. Los dos métodos obligatorios, <i>GET</i> y <i>HEAD</i>, nunca deben deshabilitarse y no deben devolver este código de error.[4]</ol>
+				<ol><i><strong>406 Not Acceptable</strong></i>: Esta respuesta se envía cuando el servidor web, después de realizar la negociación de contenido impulsado por servidor, no encuentra ningún contenido que cumpla con los criterios dados por el agente de usuario.[4]</ol>
+				<ol><i><strong>407 Proxy Authentication Required</strong></i>: Esto es similar al error 401, pero es necesario que un proxy realice la autenticación.[4]</ol>
+				<ol><i><strong>408 Request Timeout</strong></i>: Esta respuesta se envía en una conexión inactiva por algunos servidores, incluso sin una solicitud previa por parte del cliente. Significa que el servidor desea cerrar esta conexión no utilizada. Esta respuesta se usa mucho más ya que algunos navegadores, como Chrome, Firefox 27+ o IE9, usan mecanismos de preconexión HTTP para acelerar la navegación. También tenga en cuenta que algunos servidores simplemente cierran la conexión sin enviar este mensaje.[4]</ol>
+				<ol><i><strong>409 Conflict</strong></i>: Esta respuesta se enviará cuando una solicitud entre en conflicto con el estado actual del servidor.[4]</ol>
+				<ol><i><strong>410 Gone</strong></i>: Esta respuesta se enviará cuando se elimine el contenido solicitado del servidor.[4]</ol>
+				<ol><i><strong>411 Length Required</strong></i>: El servidor rechazó la solicitud porque el campo de encabezado <i>Content-Length</i> no está definido y el servidor lo requiere.[4]</ol>
+				<ol><i><strong>412 Precondition Failed</strong></i>: El cliente ha indicado precondiciones en sus encabezados que el servidor no cumple.[4]</ol>
+				<ol><i><strong>413 Payload Too Large</strong></i>: La entidad de solicitud es mayor que los límites definidos por el servidor; el servidor puede cerrar la conexión o devolver un campo de encabezado <i>Retry-After</i>.[4]</ol>
+				<ol><i><strong>414 URI Too Long</strong></i>: El URI solicitado por el cliente es más largo de lo que el servidor está dispuesto a interpretar.[4]</ol>
+				<ol><i><strong>415 Unsupported Media Type</strong></i>: El servidor no admite el formato de medios de los datos solicitados, por lo que el servidor rechaza la solicitud.[4]</ol>
+				<ol><i><strong>416 Requested Range Not Satisfiable</strong></i>: El rango especificado por el campo del encabezado <i>Rango</i> en la solicitud no se puede cumplir; es posible que el rango esté fuera del tamaño de los datos del URI objetivo.[4]</ol>
+				<ol><i><strong>417 Expectation Failed</strong></i>: Este código de respuesta significa que el servidor no puede cumplir las expectativas indicadas por el campo de encabezado de solicitud <i>Expect</i>.[4]</ol>
+				<ol><i><strong>418 I'm a teapot</strong></i>: El servidor rechaza el intento de preparar café con una tetera.[4]</ol>
+				<ol><i><strong>421 Misdirected Request</strong></i>: puede ser enviado por un servidor que no está configurado para producir respuestas para la combinación de esquema y autoridad que están incluidas en el URI de solicitud.[4]</ol>
+				<ol><i><strong>422 Unprocessable Entity</strong></i> (WebDAV): La solicitud estaba bien formada, pero no se pudo seguir debido a errores semánticos.[4]</ol>
+				<ol><i><strong>423 Locked</strong></i> (WebDAV): El recurso al que se está accediendo está bloqueado.[4]</ol>
+				<ol><i><strong>424 Failed Dependency</strong></i> (WebDAV): La solicitud falló debido a la falla de una solicitud previa.[4]</ol>
+				<ol><i><strong>426 Upgrade Required</strong></i>: El servidor se niega a realizar la solicitud utilizando el protocolo actual, pero puede estar dispuesto a hacerlo después de que el cliente se actualice a un protocolo diferente. El servidor envía un encabezado <i>Upgrade</i> en una respuesta 426 para indicar el(los) protocolo(s) requerido(s).[4]</ol>
+				<ol><i><strong>428 Precondition Required</strong></i>: El servidor de origen requiere que la solicitud sea condicional. Destinado a prevenir el problema de la "actualización perdida", donde un cliente OBTIENE el estado de un recurso, lo modifica y lo PONE de nuevo en el servidor, mientras tanto un tercero ha modificado el estado en el servidor, lo que genera un conflicto.[4]</ol>
+				<ol><i><strong>429 Too Many Requests</strong></i>: El usuario ha enviado demasiadas solicitudes en un período de tiempo determinado ("límite de velocidad").[4]</ol>
+				<ol><i><strong>431 Request Header Fields Too Large</strong></i>: El servidor no está dispuesto a procesar la solicitud porque sus campos de encabezado son demasiado grandes. La solicitud PUEDE volver a enviarse después de reducir el tamaño de los campos de encabezado de solicitud.[4]</ol>
+				<ol><i><strong>451 Unavailable For Legal Reasons</strong></i>: El usuario solicita un recurso ilegal, como una página web censurada por un gobierno.[4]</ol>
+				<ol><strong>Errores de servidor</strong></ol>
+				<ol><i><strong>500 Internal Server Error</strong></i>: El servidor ha encontrado una situación que no sabe cómo manejar.[4]</ol>
+				<ol><i><strong>501 Not Implemented</strong></i>: El método de solicitud no es compatible con el servidor y no puede ser manejado. Los únicos métodos que los servidores deben admitir (y, por lo tanto, no deben devolver este código) son <i>GET</i> y <i>HEAD</i>.[4]</ol>
+				<ol><i><strong>502 Bad Gateway</strong></i>: Esta respuesta de error significa que el servidor, mientras trabajaba como puerta de enlace para obtener una respuesta necesaria para manejar la solicitud, obtuvo una respuesta no válida.[4]</ol>
+				<ol><i><strong>503 Service Unavailable</strong></i>: El servidor no está listo para manejar la solicitud. Las causas más comunes son un servidor que está fuera de servicio por mantenimiento o que está sobrecargado. Tenga en cuenta que junto con esta respuesta, se debe enviar una página fácil de usar que explique el problema. Estas respuestas se deben usar para condiciones temporales y el encabezado <i>Retry-after</i>: HTTP, si es posible, debe contener el tiempo estimado antes de la recuperación del servicio. El webmaster también debe tener cuidado con los encabezados relacionados con el almacenamiento en caché que se envían junto con esta respuesta, ya que estas respuestas de estado temporal generalmente no se deben almacenar en caché.[4]</ol>
+				<ol><i><strong>504 Gateway Timeout</strong></i>: Esta respuesta de error se da cuando el servidor actúa como una puerta de enlace y no puede obtener una respuesta a tiempo.[4]</ol>
+				<ol><i><strong>505 HTTP Version Not Supported</strong></i>: La versión HTTP utilizada en la solicitud no es compatible con el servidor.[4]</ol>
+				<ol><i><strong>506 Variant Also Negotiates</strong></i>: El servidor tiene un error de configuración interno: la negociación de contenido transparente para la solicitud da como resultado una referencia circular.[4]</ol>
+				<ol><i><strong>507 Insufficient Storage</strong></i>: El servidor tiene un error de configuración interno: el recurso de variante elegido está configurado para participar en la negociación de contenido transparente en sí mismo y, por lo tanto, no es un punto final adecuado en el proceso de negociación.[4]</ol>
+				<ol><i><strong>508 Loop Detected</strong></i> (WebDAV): El servidor detectó un bucle infinito mientras procesaba la solicitud.[4]</ol>
+				<ol><i><strong>510 Not Extended</strong></i>: Se requieren extensiones adicionales a la solicitud para que el servidor lo cumpla.[4]</ol>
+				<ol><i><strong>511 Network Authentication Required</strong></i>: El código de estado 511 indica que el cliente necesita autenticarse para obtener acceso a la red.[4]</ol>
+		</li>
+		<li><strong>XML</strong>: es una herramienta independiente del software y del hardware para almacenar y transportar datos. XML es solo información envuelta en etiquetas, sin embargo, no están predefinidas. HTML funciona con etiquetas predefinidas como "< p >", "< h1 >", "< table >", etc. Con XML, el autor debe definir tanto las etiquetas como la estructura del documento. La mayoría de las aplicaciones XML funcionarán como se espera, incluso si se agregan (o eliminan) datos nuevos.[5]</li><br/>
+		<li><strong>XHTML</strong>: es HTML escrito como XML. Las siglas significan EXtensible HyperText Markup Language, y es casi idéntico al HTML, pero más estricto. XHTML es HTML definido como una aplicación XML y es compatible con todos los principales navegadores.[6]</li><br/>
+		<li><strong>HTML5</strong>: Hypertext Markup Language revision 5, es un lenguaje de marcado para la estructura y presentación de los contenidos de la World Wide Web. HTML5 admite la sintaxis tradicional de estilo HTML y XHTML y otras características nuevas en su marcado, nuevas API, XHTML y manejo de errores. HTML5 es un esfuerzo para poner orden en el caos del desarrollo web organizando prácticas comunes, abarcando implementaciones de varios navegadores. Es masivo, con más de 100 especificaciones como parte de las especificaciones de HTML5. Entendiendo esto, puedes simplificar pensando en HTML5 de esta manera. HTML5 es simplemente un término general para la próxima generación de aplicaciones web y cómo se ampliará la funcionalidad con un mejor marcado (HTML), mejor estilo (CSS) y mejor interactividad (JavaScript).[7]</li><br/>
+		<li><strong>JS</strong>: JavaScript es un lenguaje liviano, interpretado y orientado a objetos con funciones de primera clase, y es mejor conocido como el lenguaje de scripting para páginas web, pero también se usa en muchos entornos que no son de navegador. Es un lenguaje de scripts basado en prototipos y multi-paradigma que es dinámico y admite estilos de programación orientados a objetos, imperativos y funcionales. JavaScript se ejecuta en el lado del cliente de la web, que se puede utilizar para diseñar / programar cómo se comportan las páginas web en la ocurrencia de un evento. JavaScript es un lenguaje de scripting fácil de aprender y también poderoso, ampliamente utilizado para controlar el comportamiento de la página web. Contrario a la idea errónea popular, JavaScript no es "Interpretado Java". En pocas palabras, JavaScript es un lenguaje de scripts dinámico que admite la construcción de objetos basados en prototipos. La sintaxis básica es intencionalmente similar tanto a Java como a C ++ para reducir el número de conceptos nuevos requeridos para aprender el idioma. JavaScript puede funcionar como un lenguaje orientado a objetos y a procedimientos. Los objetos se crean mediante programación en JavaScript, mediante la vinculación de métodos y propiedades a objetos que de otro modo estarían vacíos en tiempo de ejecución, a diferencia de las definiciones de clases sintácticas comunes en lenguajes compilados como C ++ y Java. Una vez que se ha construido un objeto, se puede usar como un plano (o prototipo) para crear objetos similares.[8]</li> <br/>
+		<li><strong>PHP</strong>: Hypertext Preprocessor, es un lenguaje de scripting de propósito general de código abierto ampliamente utilizado que es especialmente adecuado para el desarrollo web y puede integrarse en HTML. En lugar de muchos comandos para generar HTML (como se ve en C o Perl), las páginas PHP contienen HTML con código incrustado que hace "algo". El código PHP está encerrado en instrucciones especiales de inicio y finalización <?php y ?> Que le permiten entrar y salir del "modo PHP". Lo que distingue a PHP de algo así como el JavaScript del lado del cliente es que el código se ejecuta en el servidor, generando HTML que luego se envía al cliente. El cliente recibiría los resultados de ejecutar ese script, pero no sabría cuál era el código subyacente. Incluso puede configurar su servidor web para procesar todos sus archivos HTML con PHP, y entonces realmente no hay forma de que los usuarios puedan decir lo que tiene bajo la manga. Lo mejor de usar PHP es que es extremadamente simple para un recién llegado, pero ofrece muchas funciones avanzadas para un programador profesional. No tengas miedo de leer la larga lista de características de PHP. Puedes saltar, en poco tiempo, y comenzar a escribir guiones simples en unas pocas horas. Aunque el desarrollo de PHP se centra en el scripting del lado del servidor, puede hacer mucho más con él. Siga leyendo y vea más en el ¿Qué puede hacer PHP? sección, o vaya directamente al tutorial introductorio si solo está interesado en la programación web.[9]</li><br/>
+		<li><strong>JSP</strong>: JavaServer Pages es una tecnología utilizada para desarrollar páginas web interactivas. JSP fue desarrollado por Sun Microsystems y es una versión mejorada de los servlets de Java. Puede desarrollarse de manera simplificada y tiene una amplia gama de aplicaciones. Al igual que con la mayoría de las tecnologías basadas en servidor, JSP separa la lógica empresarial de la capa de presentación. Las JSP son páginas HTML normales con código Java incorporado. Para procesar un archivo JSP, los desarrolladores necesitan un motor JSP, que está conectado a un servidor web. La página JSP se compila en un servlet, que es manejado por el motor de servlet. Esta fase se conoce como traducción. El motor de servlet luego carga la clase de servlet y la ejecuta para crear HTML dinámico, que luego se envía al navegador. Cuando se solicita la página siguiente, la página JSP se precompila en el servlet y se ejecuta, a menos que se cambie la página JSP. Cuando se utiliza con Java DataBase Connectivity (JDBC), JSP proporciona una forma dinámica de crear sitios web basados en bases de datos.[10]</li><br/>
+		<li><strong>Ajax</strong>: es un script del lado del cliente que se comunica con y desde un servidor / base de datos sin la necesidad de una devolución de datos o una actualización completa de la página. La mejor definición que he leído para Ajax es "el método de intercambio de datos con un servidor y la actualización de partes de una página web, sin volver a cargar toda la página". Ajax en sí es un término genérico para varias técnicas de JavaScript utilizadas para conectarse a un servidor web de forma dinámica sin necesariamente cargar varias páginas. En un sentido más estrictamente definido, se refiere al uso de objetos XmlHttpRequest para interactuar dinámicamente con un servidor web a través de JavaScript.[11]</li><br/>
+		</div>
+	<div class="importantInfo">
+		<h3 class="qa">Preguntas y Respuestas</h3>
+		<li>
+			<strong>¿Cuál es la diferencia entre Internet y la World Wide Web?</strong>
+			<ol><strong>Internet</strong> es una red masiva de redes, una infraestructura de red. Conecta millones de computadoras de forma global, formando una red en la que cualquier computadora puede comunicarse con cualquier otra computadora siempre que ambas estén conectadas a Internet. La información que viaja a través de Internet lo hace a través de una variedad de idiomas conocidos como protocolos. La <strong>World Wide Web</strong>, o simplemente Web, es una forma de acceder a la información a través de Internet. Es un modelo de intercambio de información que se basa en Internet. La Web utiliza el protocolo HTTP, solo uno de los idiomas que se hablan en Internet, para transmitir datos. Los servicios web, que usan HTTP para permitir que las aplicaciones se comuniquen con el fin de intercambiar lógica de negocios, utilizan Internet para compartir información. La Web también utiliza navegadores, como Internet Explorer o Firefox, para acceder a documentos web denominados páginas web que están vinculadas entre sí a través de hipervínculos. Los documentos web también contienen gráficos, sonidos, texto y video.[12]</ol>
+		</li><br/>
+		<li>
+			<strong>¿Cuál es el propósito de los métodos HTTP: GET, HEAD, POST, PUT, PATCH, DELETE?</strong>
+			<ol><a href="#metodosHTTP">Respuesta</a></ol>
+		</li><br/>
+		<li>
+			<strong>¿Qué método HTTP se debe utilizar al enviar un formulario HTML, por ejemplo cuando ingresas tu usuario y contraseña en algún sitio? ¿Por qué?</strong>
+			<ol>Se debe usar el método POST, porque el método GET tiene sus limitaciones. Además, POST es el indicado para enviar este tipo de formularios, porque al enviar la información el usuario no puede ver lo que se está enviando en pantalla.</ol>
+		</li><br/>
+		<li>
+			<strong>Un servidor web devuelve una respuesta HTTP con código 200. ¿Qué significa esto? ¿Ocurrió algún error?</strong>
+			<ol><a href="#metodo200">Respuesta</a></ol>
+		</li><br/>
+		<li>
+			<strong>¿Es responsabilidad del desarrollador corregir un sitio web si un usuario reporta que intentó acceder al sitio y se encontró con un error 404? ¿Por qué?</strong>
+			<ol>No necesariamente, ya que este error se muestra cuando el usuario quiere acceder a un recurso que el desarrollador intencionalmente le ha indicado que no existe. Cabe la posibilidad también de que si exista, pero debido a que se encuentre bajo mantenimiento o esté cambiando de dirección, se muestre el error para evitar que el usuario observe los cambios que se estan haciendo en el momento. Es por eso que no es la responsabilidad del desarrollador como tal.</ol>
+		</li><br/>
+		<li>
+			<strong>¿Es responsabilidad del desarrollador corregir un sitio web si un usuario reporta que intentó acceder al sitio y se encontró con un error 500? ¿Por qué?</strong>
+			<ol>Si, es su responsabilidad porque significa que algo ha ido mal en el servidor del sitio web, pero el servidor no podría ser más específico sobre cuál es el problema exacto, y como expertos es nuestro deber llegar a la raíz del problema y corregirlo.</ol>
+		</li><br/>
+		<li>
+			<strong>¿Qué significa que un atributo HTML5 esté depreciado o desaprobado (deprecated)? Menciona algunos elementos de HTML 4 que en HTML5 estén desaprobados.</strong>
+			<ol>Significa que los atributos que existían anteriormente (en HTML 4), ya no están en uso, por lo que ya no se aprueba o recomienda que sean incluidos dentro del código, debido a que al ser despreciados, ya no tienen la funcionalidad que tenían anteriormente porque ya fueron reemplazados por nuevos atributos.</ol>
+			<ol>Algunos elementos de HTML 4 que en HTML5 están desaprobados son:</ol>
+			<ol>
+				<dt>
+					<table>
+						<thead>
+							<tr>
+								<th>Tag (Elemento)</th>
+								<th>Descripción</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td>< acronym ></td>
+								<td>Define un acrónimo</td>
+							</tr>
+							<tr>
+								<td>< applet ></td>
+								<td>Define una applet</td>
+							</tr>
+							<tr>
+								<td>< basefont ></td>
+								<td>Define una fuente base para la página</td>
+							</tr>
+							<tr>
+								<td>< big ></td>
+								<td>Define texto grande</td>
+							</tr>
+							<tr>
+								<td>< center ></td>
+								<td>Define el texto centrado</td>
+							</tr>
+							<tr>
+								<td>< dir ></td>
+								<td>Define una lista de directorio</td>
+							</tr>
+							<tr>
+								<td>< font ></td>
+								<td>Define la fuente, el tamaño y el color del texto</td>
+							</tr>
+							<tr>
+								<td>< frame ></td>
+								<td>Define un frame</td>
+							</tr>
+							<tr>
+								<td>< frameset ></td>
+								<td>Define un set de frames</td>
+							</tr>
+							<tr>
+								<td>< isindex ></td>
+								<td>Define un campo de entrada de una sola línea</td>
+							</tr>
+							<tr>
+								<td>< noframes ></td>
+								<td>Define una sección sin frames</td>
+							</tr>
+							<tr>
+								<td>< s ></td>
+								<td>Define el texto tachado</td>
+							</tr>
+							<tr>
+								<td>< strike ></td>
+								<td>Define el texto tachado</td>
+							</tr>
+							<tr>
+								<td>< tt ></td>
+								<td>Define texto de teletipo</td>
+							</tr>
+							<tr>
+								<td>< u ></td>
+								<td>Define el texto subrayado</td>
+							</tr>
+						</tbody>
+					</table>[17]
+				</dt>
+			</ol>
+		</li><br/>
+		<li>
+			<strong>¿Cuáles son las diferencias principales entre HTML 4 y HTML5?</strong>
+			<ol>
+				<dt><strong>1. Sintaxis</strong>: HTML5 define detalladas reglas de parse, incluyendo un control de errores, para que esta sintaxis sea compatible con las implementaciones más populares. Los agentes de usuario seguirás las mismas reglas que para los que actualmente tienen text/html. El otro sintaxis que se puede utilizar para HTML5 es el llamado XHTML5, que no es más que una sintaxis compatible con XML y documentos correctos en XHTML1.[16]</dt>
+				<dt><strong>2. Codificación de carácteres</strong>: Al igual que sus hermanos menores, seguiremos podiendo definir el charset de nuestro documento mediante el tag < meta charset="UTF-8" > o la correspondiente versión de XML para XHTML5.[16]</dt>
+				<dt><strong>2.2 El DOCTYPE</strong>: El nuevo HTML5 requiere el elemento DOCTYPE que debe ser declarado al proncipio de la página, de esta forma nos aseguramos de que el navegador renderiza la página en modo estandard. En cambio para la versión XHTML5 este elemento es opcional debido a que XML actua de diferente manera dentro de nuestro navegador.[16]</dt>
+				<dt><strong>3.1 Modelos estrictos de contenidos</strong>: HTML5 define de forma más estricta el contenido para elementos < div /> y < li />. Estos elementos ahora pueden contener contenido de elementos “block” o “inline” pero no los dos. En HTML4 esto fue considerado como un bug de la espeficación ya que permitía el uso de ambos.[16]</dt>
+				<dt><strong>3.2 Nuevos elementos</strong>: Los tiempos modernos requieren nuevos elementos para proporcionar una web más semántica, completa y homogenea. Para ello se han añadido una buena serie de elementos que nos permitirán encapsular más nuestro contenido.</dt>
+				<dt><strong>3.3 Nuevos atributos</strong>: HTML 5 ha introducido una gran cantidad de nuevos elementos para varios, ya existentes, de los que ya disponemos en la HTML4.</dt>
+				<dt><strong>3.4 Elementos cambiados</strong></dt>
+				<dt><strong>3.5 Elementos eliminados</strong>: En la nueva versión, algunos de los elementos anteriormente desaprobados pasan a ser eliminados definivamente.</dt>
+				<dt><strong>3.6 Atributos eliminados</strong>: Al igual que los elementos los atributos tambien pasarán a mejor vida.</dt>
+			</ol>
+		</li><br/>
+		<li>
+			<strong>¿Qué componentes de estructura y estilo tiene una tabla?</strong>
+			<ol>
+				<dt><strong>Estructura</strong></dt>
+				<dt>< table >: se usa para definir una tabla</dt>
+				<dt>< tr >: se usa para definir una fila de la tabla</dt>
+				<dt>< td >: se usa para definir una tabla de datos</dt>
+				<dt>< th >: se usa para definir el encabezado de una tabla</dt>
+				<dt>< tfoot >: se usa para definir el pie de una tabla</dt>
+				<dt>< caption >: se usa para definir un título de tabla</dt>
+				<dt>colspan: se usa para hacer que una celda abarque muchas columnas</dt>
+				<dt>rowspan: se usa para hacer que una celda abarque muchas filas</dt>
+				<dt>id: se usa para definir de manera única una tabla</dt><br/>
+				<dt><strong>Estilo</strong> (se usa en CSS)</dt>
+				<dt>border: se usa para definir un borde</dt>
+				<dt>border-collapse: se usa para contraer las fronteras de las celdas</dt>
+				<dt>padding: se usa para agregar relleno a las celdas</dt>
+				<dt>text-align: se usa para alinear el texto de la celda</dt>
+				<dt>border-spacing: se usa para establecer el espacio entre las celdas[18]</dt>
+			</ol>
+		</li><br/>
+		<li>
+			<strong>¿Cuáles son los principales controles de una forma HTML5?</strong>
+			<ol>
+				<dt><strong>Elementos</strong></dt>
+				<dt>< form >: define un formulario que se utiliza para recopilar la entrada del usuario</dt>
+				<dt>< input >: es el elemento de forma más importante y se puede mostrar de varias maneras, dependiendo del tipo. Puede ser de tipo "text", que define un campo de entrada de texto de una línea, de tipo "radio", que define un botón de radio (para seleccionar una de muchas opciones) y de tipo "submit", que define un botón de envío (para enviar el formulario)</dt>
+				<dt>< fieldset >: se usa para agrupar datos relacionados en un formulario.</dt>
+				<dt>< legend >: define un título para el elemento < fieldset >.</dt>
+				<dt>< select >: define una lista desplegable.</dt>
+				<dt>< option >: define una opción que se puede seleccionar. De forma predeterminada, se selecciona el primer elemento en la lista desplegable. Para definir una opción preseleccionada, se debe agregar el atributo <i>select</i> a la opción deseada.</dt>
+				<dt>< textarea >: define un campo de entrada de varias líneas (un área de texto).</dt>
+				<dt>< button >: define un botón en el cual se puede hacer clic.</dt>
+				<dt>< datalist >: especifica una lista de opciones predefinidas para un elemento < input >. Los usuarios verán una lista desplegable de las opciones predefinidas a medida que ingresan datos.</dt>
+				<dt>< output >: representa el resultado de un cálculo (como uno realizado por un script).</dt>
+				<dt>< label >: define una etiqueta para un elemento < input ></dt>
+				<dt>< optgroup >: define un grupo de opciones relacionadas en una lista desplegable.[19][20]</dt><br/>
+				<dt><strong>Atributos</strong></dt>
+				<dt>- action: define la acción que se realizará cuando se envíe el formulario. Normalmente, los datos del formulario se envían a una página web en el servidor cuando el usuario hace clic en el botón Enviar.</dt>
+				<dt>- target: especifica si el resultado enviado se abrirá en una nueva pestaña del navegador, un marco o en la ventana actual. El valor predeterminado es "_self", lo que significa que el formulario se enviará a la ventana actual. Para hacer que el resultado del formulario se abra en una nueva pestaña del navegador, se usa el valor "_blank".</dt>
+				<dt>- method: especifica el método HTTP (GET o POST) que se utilizará al enviar los datos del formulario.</dt>
+				<dt>- name: cada campo de entrada debe tener un atributo de este tipo para ser enviado. Si se omite este atributo, los datos de ese campo de entrada no se enviarán en absoluto.</dt>
+				<dt>- size: especifica el número de valores visibles.</dt>
+				<dt>- multiple: permite que el usuario seleccione más de un valor.</dt>
+				<dt>- rows: especifica el número visible de líneas en un área de texto.</dt>
+				<dt>- cols: especifíca el ancho visible de un área de texto.[19][20]</dt><br/>
+				<dt><strong>Tipos de entradas</strong></dt>
+				<dt>
+					<form>
+						= text →
+						<input type="text" name="textExample">
+					</form>
+				</dt>
+				<dt>
+					<form>
+						= password → 
+						<input type="password" name="passwordExample">
+					</form>
+				</dt>
+				<dt>
+					<form>
+					= submit →
+					<input type="submit" name="submitExample">
+					</form>
+				</dt>
+				<dt>
+					<form>
+						= reset →
+						<input type="reset" name="resetExample">
+					</form>
+				</dt>
+				<dt>
+					<form action="">
+						= radio →
+						<input type="radio" name="radioExample"> Opción 1
+						<input type="radio" name="radioExample"> Opción 2
+						<input type="radio" name="radioExample"> Opción 3
+					</form>
+				</dt>
+				<dt>
+					<form>
+						= checkbox →
+						<input type="checkbox" name="checkbExample1"> Opción 4
+						<input type="checkbox" name="checkbExample2"> Opción 5
+						<input type="checkbox" name="checkbExample3"> Opción 6
+					</form>
+				</dt>
+				<dt>
+					<form>
+						= button →
+						<button type="button" name="buttonExample">Button</button>
+					</form>
+				</dt>
+				<dt>
+					<form>
+						= color →
+						<input type="color" name="colorExample">
+					</form>
+				</dt>
+				<dt>
+					<form>
+						= date →
+						<input type="date" name="dateExample">
+					</form>
+				</dt>
+				<dt>
+					<form>
+						= datetime-local →
+						<input type="datetime-local" name="datetime-localExample">
+					</form>
+				</dt>
+				<dt>
+					<form>
+						= email →
+						<input type="email" placeholder="name@domain.com" name="emailExample">
+					</form>
+				</dt>
+				<dt>
+					<form>
+						= month →
+						<input type="month" name="monthExample">
+					</form>
+				</dt>
+				<dt>
+					<form>
+						= number →
+						<input type="number" name="numberExample">
+					</form>
+				</dt>
+				<dt>
+					<form>
+						= range →
+						<input type="range" id="rangeExample" name="rangeExample" min="100" max="500" step="10" />
+					</form>
+				</dt>
+				<dt>
+					<form>
+						= search →
+						<input type="search" placeholder="HTML5 new elements" name="searchExample">
+					</form>
+				</dt>
+				<dt>
+					<form>
+						= tel →
+						<input type="tel" placeholder="123-456-7890" name="telExample">
+					</form>
+				</dt>
+				<dt>
+					<form>
+						= time →
+						<input type="time" name="timeExample">
+					</form>
+				</dt>
+				<dt>
+					<form>
+						= url →
+						<input type="url" placeholder="https://www.domain.com" name="urlExample">
+					</form>
+				</dt>
+				<dt>
+					<form>
+						= week →
+						<input type="week" name="urlExample">
+					</form>
+				</dt>
+				<dt>[19][20]</dt>
+			</ol>
+		</li><br/>
+		<li>
+			<strong>¿Qué tanto soporte HTML5 tiene el navegador que utilizas?</strong>
+			<ol>Safari 11 tiene un puntaje de 452 de 555, por lo que representa un soporte del 81.44% de HTML5.<a href="#b14">[14]</a></ol>
+		</li><br/>
+	</div><br/>
+	<section id="recomends">
+		<h3 class="recom">Recomendaciones</h3>
+		<li id="question">Como ingeniero de software ¿cuál es tu recomendación sobre el uso de <i>!important</i> en un CSS?</li>
+		<ul>Recomiendo usarlo lo menos posible, y si puede ser evitado, mejor. Como ingenieros es nuestro deber estructurar correctamente nuestros archivos, siempre pensando en el orden en el cual estamos programando nuestra página web, para evitar superponer estilos encima de otros, y solamente usar esta propiedad cuando sea realmente necesaria.</ul>
+		<li id="question">Si se pone una imagen de fondo en una página HTML, ¿por qué debe escogerse con cuidado?</li>
+		<ul>Es importante tomarse el tiempo adecuado para hacerlo porque debe tener una correcta visualización con todos los elementos que serán puestos dentro de la página. Si no se escoge una imagen que combine con el estilo de la página, puede resultar perjudicial visualmente para los usuarios, provocando así un desinterés por seguir navegando en ella.</ul>
+		<li id="question">Como ingeniero de software, ¿cuál es tu recomendación al elegir las unidades de un propiedad de estilo entre %, px y pt?</li>
+		<ul>Mi recomendación sería utilizarlas de acuerdo a las necesidades, por ejemplo, la unidad de pixeles (px) son relativos al dispositivo de visualización, lo que significa que si utilizamos esta unidad en nuestro CSS, no sería igual visualmente en un dispositivo móvil, que en una computadora. La unidad (pt) representa puntos en la pantalla y la unidad (%) representa unidades de longitud relativa, las cuales especifican una longitud de esta naturaleza a otra propiedad de longitud. Éstas escalan mejor entre diferentes medios de representación.[21] En resumen, recomendaría utilizar la porcentual, ya que se adapta mejor a diferentes medios, pero siempre se pueden usar según convenga en cada caso.</ul>
+		<li id="question">¿Por qué el uso de una versión minimizada del CSS mejora el rendimiento del sitio?</li>
+		<ul>Para el navegador no hay diferencia en la estructura del código en nuestro archivo CSS, ya que lo que busca es descargar rápidamente las hojas de estilo para que pueda ser capaz de aplicar los estilos lo antes posible. Es por ello que se recomienda que no ocupen más de 100kb por archivo CSS, para evitar frustración en el usuario final y que pueda visualizar lo más pronto posible la página web a la que desea acceder.[22]</ul><br/>
+	</section>
+	<div class="importantInfo">
+		<h4 class="bibliography" id="biblio" id="final">Bibliografía:</h4>
+		<ul id="b1">[1]U. Definitions and C. Hope, "What is URL (Uniform Resource Locator)?", Computerhope.com, 2018. [Online]. Available: https://www.computerhope.com/jargon/u/url.htm. [Accessed: 16- Jan- 2018].</ul>
+		<ul id="b2">[2]"MIME Description", Comptechdoc.org, 2018. [Online]. Available: http://www.comptechdoc.org/independent/web/mime/description/mimeintro.html. [Accessed: 16- Jan- 2018].</ul>
+		<ul>[3]"Métodos HTTP", Diego.com.es, 2018. [Online]. Available: https://diego.com.es/metodos-http. [Accessed: 16- Jan- 2018].</ul>
+		<ul>[4]"Códigos de estado de respuesta HTTP", Mozilla Developer Network, 2018. [Online]. Available: https://developer.mozilla.org/es/docs/Web/HTTP/Status. [Accessed: 17- Jan- 2018].</ul>
+		<ul>[5]"XML Introduction", W3schools.com, 2018. [Online]. Available: https://www.w3schools.com/xml/xml_whatis.asp. [Accessed: 17- Jan- 2018].</ul>
+		<ul>[6]"HTML and XHTML", W3schools.com, 2018. [Online]. Available: https://www.w3schools.com/html/html_xhtml.asp. [Accessed: 17- Jan- 2018].</ul>
+		<ul>[7]"What is HTML5? - Definition from Techopedia", Techopedia.com, 2018. [Online]. Available: https://www.techopedia.com/definition/1891/html5. [Accessed: 17- Jan- 2018].</ul>
+		<ul>[8]"About JavaScript", Mozilla Developer Network, 2018. [Online]. Available: https://developer.mozilla.org/en-US/docs/Web/JavaScript/About_JavaScript. [Accessed: 17- Jan- 2018].</ul>
+		<ul>[9]"PHP: What is PHP? - Manual", Php.net, 2018. [Online]. Available: http://php.net/manual/en/intro-whatis.php. [Accessed: 17- Jan- 2018].</ul>
+		<ul>[10]"What is JavaServer Pages (JSP)? - Definition from Techopedia", Techopedia.com, 2018. [Online]. Available: https://www.techopedia.com/definition/4886/javaserver-page-jsp. [Accessed: 17- Jan- 2018].</ul>
+		<ul>[11]"What is Ajax and Where is it Used in Technology?", Segue Technologies, 2018. [Online]. Available: https://www.seguetech.com/ajax-technology/. [Accessed: 17- Jan- 2018].</ul>
+		<ul>[12]"The Differences Between the Internet and the Web - Webopedia", Webopedia.com, 2018. [Online]. Available: https://www.webopedia.com/DidYouKnow/Internet/Web_vs_Internet.asp. [Accessed: 17- Jan- 2018].</ul>
+		<ul>[13]"PATCH", Mozilla Developer Network, 2018. [Online]. Available: https://developer.mozilla.org/en-US/docs/Web/HTTP/Methods/PATCH. [Accessed: 17- Jan- 2018].</ul>
+		<ul id="b14">[14]"The HTML5 test - How well does your browser support HTML5?", HTML5test.com, 2018. [Online]. Available: http://html5test.com/index.html. [Accessed: 17- Jan- 2018].</ul>
+		<ul>[15]"200 OK", Mozilla Developer Network, 2018. [Online]. Available: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/200. [Accessed: 17- Jan- 2018].</ul>
+		<ul>[16]"Las principales diferencias entre HTML5 y HTML4 | aNieto2K", Anieto2k.com, 2018. [Online]. Available: http://www.anieto2k.com/2007/06/16/las-principales-diferencias-entre-html5-y-html4/. [Accessed: 17- Jan- 2018].</ul>
+		<ul>[17]"HTML5 - DEPRECATED TAGS & ATTRIBUTES", Tutorialspoint.com, 2018. [Online]. Available: https://www.tutorialspoint.com/html5/pdf/html5_deprecated_tags.pdf. [Accessed: 17- Jan- 2018].</ul>
+		<ul>[18]"HTML Tables", w3schools.com, 2018. [Online]. Available: https://www.w3schools.com/html/html_tables.asp. [Accessed: 17- Jan- 2018].</ul>
+		<ul>[19]"HTML Forms", w3schools.com, 2018. [Online]. Available: https://www.w3schools.com/html/html_forms.asp. [Accessed: 17- Jan- 2018].</ul>
+		<ul>[20]"HTML Form Elements", W3schools.com, 2018. [Online]. Available: https://www.w3schools.com/html/html_form_elements.asp. [Accessed: 17- Jan- 2018].</ul>
+		<ul>[21]"CSS Units", w3schools.com, 2018. [Online]. Available: https://www.w3schools.com/cssref/css_units.asp [Accessed: 18- Jan- 2018].</ul>
+		<ul>[22]"Optimización CSS para mejorar el rendimiento de tu web", aukera.es, 2018. [Online]. Available: https://aukera.es/blog/optimizacion-css-mejora-el-rendimiento-de-tu-web/#comprimir-hojas-de-estilo [Accessed: 18- Jan- 2018].</ul><br/>
+	</div>
+	<footer>
+		<ul>Michelle Anguiano | A01209529</ul>
+		<ul>Editado con <a href="http://www.sublimetext.com" target="_blank">Sublime Text</a></ul>
+	</footer>
+</body>
+</html>
