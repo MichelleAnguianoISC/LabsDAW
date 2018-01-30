@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Lab 4</title>
+	<link rel="stylesheet" type="text/css" href="min-styles.css">
+	<link href="https://fonts.googleapis.com/css?family=Delius|Delius+Unicase" rel="stylesheet">
+</head>
+<body>
+	<div id="mySidenav" class="sidenav">
+		<a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+		<a href="index.html">Inicio</a>
+		<a href="lab1.html">Lab 1</a>
+		<a href="investigacion1.html">Investigación 1</a>
+		<a href="lab3.html">Lab 3</a>
+		<a href="lab5.html">Lab 5</a>
+		<a href="lab6.html">Lab 6</a>
+	</div>
+	<span style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776; MENÚ</span>
+	<header class="headerStyle"><h1 class="headerStyle">Lab 4: Fundamentos de JavaScript</h1></header>
+	<section class="importantInfo">
+		<h3 class="info">Problemas</h3>
+		<table>
+			<tbody>
+				<tr>
+					<td>
+						<img src="images\n1.png" id="num1" /><br/>
+						<button onclick="createTable();">Click me!</button> 
+					</td>
+					<td>
+						<img src="images\n2.png" id="num2" /><br/>
+						<button onclick="sumTwoNumbers();">Click me!</button> 
+					</td>
+					<td>
+						<img src="images\n3.png" id="num2" /><br/>
+						<button onclick="readArray();">Click me!</button> 
+					</td>
+					<td>
+						<img src="images\n4.png" id="num4" /><br/>
+						<button onclick="average();">Click me!</button> 
+					</td>
+					<td >
+						<img src="images\n5.png" id="num4" /><br/>
+						<button onclick="inverse();">Click me!</button> 
+					</td>
+				</tr>
+				<tr>
+					<td colspan="5">
+						<h3>Respuestas:</h3>
+						<table id="table"></table>
+                    	<p id="answer"></p>
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<img src="images\n6.png" id="num4" /><br/>
+					</td>
+					<td>
+						<p>Ingresa el texto que deseas encriptar ↡</p>
+						<input type="text" id="encryptionInput">
+					</td>
+					<td colspan="2">
+						<button onclick="encrypt();">Encriptar</button>
+					</td>
+					<td>
+						<textarea id="encryptionOutput"></textarea>
+					</td>
+				</tr>
+			</tbody>
+		</table>
+		<h3 class="info">Preguntas a responder</h3>
+		<li id="question">¿Qué diferencias y semejanzas hay entre Java y JavaScript?</li>
+		<ul><strong>Diferencias</strong>:</ul>
+		<ul>
+			<li>El lenguaje de programación JavaScript, desarrollado por Netscape, Inc., no es parte de la plataforma Java.</li>
+			<li>JavaScript no crea applets o aplicaciones independientes.</li>
+			<li>En su forma más común, JavaScript reside dentro de los documentos HTML y puede proporcionar niveles de interactividad a las páginas web que no son alcanzables con HTML simple.</li>
+			<li>Java es un lenguaje de programación OOP, mientras que Java Script es un lenguaje de escritura OOP.</li>
+			<li>Java crea aplicaciones que se ejecutan en una máquina virtual o navegador, mientras que el código JavaScript se ejecuta solo en un navegador.</li>
+			<li>El código Java necesita ser compilado mientras que el código JavaScript está todo en texto.</li>
+			<li>Requieren diferentes complementos.<a href="#r1">[1]</a></li>
+		</ul>
+		<ul><strong>Semejanzas</strong>:</ul>
+		<ul>
+			<li>Dan soporte a multiplataformas.</li>
+			<li>Son sumamente populares entre desarrolladores debido a que ambos son usados para diferentes propósitos.</li>
+			<li>Ambos pueden correr en un navegador.</li>
+			<li>Ambos se pueden ejecutar en un servidor.</li>
+			<li>Ambos tienen librerías y Frameworks<a href="#r2">[2]</a></li></li>
+		</ul>
+		<li id="question">¿Qué métodos tiene el objeto Date? (Menciona al menos 5)</li>
+		<ul>
+			<table>
+				<thead>
+					<tr>
+						<th>Método</th>
+						<th>Descripción</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td>getDate()</td>
+						<td>Obtiene el día como número (1-31)</td>
+					</tr>
+					<tr>
+						<td>getDay()</td>
+						<td>Obtiene el día de la semana como un número (0-6)</td>
+					</tr>
+					<tr>
+						<td>getFullYear()</td>
+						<td>Obtiene el año de cuatro dígitos (aaaa)</td>
+					</tr>
+					<tr>
+						<td>getHours()</td>
+						<td>Obtiene la hora (0-23)</td>
+					</tr>
+					<tr>
+						<td>getMilliseconds()</td>
+						<td>Obtiene los milisegundos (0-999)</td>
+					</tr>
+					<tr>
+						<td>getMinutes()</td>
+						<td>Obtiene los minutos (0-59)</td>
+					</tr>
+					<tr>
+						<td>getMonth()</td>
+						<td>Obtiene el mes (0-11)</td>
+					</tr>
+					<tr>
+						<td>getSeconds()</td>
+						<td>Obtiene los segundos (0-59)</td>
+					</tr>
+					<tr>
+						<td>getTime()</td>
+						<td>Obtiene el tiempo (milisegundos desde el 1 de enero de 1970)</td>
+					</tr>
+				</tbody>
+			</table><a href="#r3">[3]</a>
+		</ul>
+		<li id="question">¿Qué métodos tienen los arreglos? (Menciona al menos 5*)</li>
+		<ul>
+			<table>
+				<thead>
+					<tr>
+						<th>Método</th>
+						<th>Descripción</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td>concat()</td>
+						<td>Une a dos o más matrices y devuelve una copia de las matrices unidas</td>
+					</tr>
+					<tr>
+						<td>copyWithin()</td>
+						<td>Copia elementos de la matriz dentro de la misma, hacia y desde posiciones especificadas</td>
+					</tr>
+					<tr>
+						<td>every()</td>
+						<td>Comprueba si cada elemento de una matriz pasa una prueba</td>
+					</tr>
+					<tr>
+						<td>fill()</td>
+						<td>Rellena los elementos en una matriz con un valor estático</td>
+					</tr>
+					<tr>
+						<td>filter()</td>
+						<td>Crea una nueva matriz con cada elemento en una matriz que pasa una prueba</td>
+					</tr>
+					<tr>
+						<td>find()</td>
+						<td>Devuelve el valor del primer elemento en una matriz que pasa una prueba</td>
+					</tr>
+					<tr>
+						<td>findIndex()</td>
+						<td>Devuelve el índice del primer elemento en una matriz que pasa una prueba</td>
+					</tr>
+					<tr>
+						<td>forEach()</td>
+						<td>Llama a una función para cada elemento de matriz</td>
+					</tr>
+					<tr>
+						<td>indexOf()</td>
+						<td>Busca en la matriz un elemento y devuelve su posición</td>
+					</tr>
+					<tr>
+						<td>isArray()</td>
+						<td>Comprueba si un objeto es una matriz</td>
+					</tr>
+					<tr>
+						<td>join()</td>
+						<td>Une todos los elementos de una matriz en una cadena</td>
+					</tr>
+					<tr>
+						<td>lastIndexOf()</td>
+						<td>Busca en la matriz un elemento, comenzando por el final y devuelve su posición</td>
+					</tr>
+					<tr>
+						<td>map()</td>
+						<td>Crea una nueva matriz con el resultado de llamar a una función para cada elemento de la matriz</td>
+					</tr>
+					<tr>
+						<td>pop()</td>
+						<td>Elimina el último elemento de una matriz y devuelve ese elemento</td>
+					</tr>
+					<tr>
+						<td>push()</td>
+						<td>Agrega nuevos elementos al final de una matriz y devuelve la nueva longitud</td>
+					</tr>
+					<tr>
+						<td>reduce()</td>
+						<td>Reduce los valores de una matriz a un solo valor (yendo de izquierda a derecha)</td>
+					</tr>
+					<tr>
+						<td>reduceRight()</td>
+						<td>Reduce los valores de una matriz a un valor único (yendo de derecha a izquierda)</td>
+					</tr>
+					<tr>
+						<td>reverse()</td>
+						<td>Invierte el orden de los elementos en una matriz</td>
+					</tr>
+					<tr>
+						<td>shift()</td>
+						<td>Elimina el primer elemento de una matriz y devuelve ese elemento</td>
+					</tr>
+					<tr>
+						<td>slice()</td>
+						<td>Selecciona una parte de una matriz y devuelve la nueva matriz</td>
+					</tr>
+					<tr>
+						<td>some()</td>
+						<td>Comprueba si alguno de los elementos en una matriz pasa una prueba</td>
+					</tr>
+					<tr>
+						<td>sort()</td>
+						<td>Ordena los elementos de una matriz</td>
+					</tr>
+					<tr>
+						<td>splice()</td>
+						<td>Agrega / Elimina elementos de una matriz</td>
+					</tr>
+					<tr>
+						<td>toString()</td>
+						<td>Convierte una matriz en una cadena y devuelve el resultado</td>
+					</tr>
+					<tr>
+						<td>unshift()</td>
+						<td>Agrega nuevos elementos al comienzo de una matriz y devuelve la nueva longitud</td>
+					</tr>
+					<tr>
+						<td>valueOf()</td>
+						<td>Devuelve el valor primitivo de una matriz</td>
+					</tr>
+				</tbody>
+			</table><a href="#r4">[4]</a>
+		</ul>
+		<li id="question">¿Cómo se declara una variable con alcance local dentro de una función?</li>
+		<ul>Se declara:
+		<ul>function <i>example</i> {
+		<ul><i>var (nombre de la variable)</i> = <i>(valor que se desea otorgar)</i>.</ul></ul>
+		<ul>}</ul></ul>
+		<li id="question">¿Qué implicaciones tiene utilizar variables globales dentro de funciones?</li>
+		<ul>Una variable que se declara fuera de la definición de una función es una variable global y su valor es accesible y modificable desde su programa.  Si se declara dentro de la definición de una función, será local.  Se crea y se destruye cada vez que se ejecuta la función y ningún código externo a la función puede tener acceso a ella.  JavaScript no admite el ámbito de bloque (en el que un conjunto de llaves {. . .} define un nuevo ámbito), excepto en el caso especial de variables de ámbito del bloque. Una variable local puede tener el mismo nombre que una variable global, pero es totalmente independiente; el cambio del valor de una variable no tiene efecto en la otra.  Solo la versión local tiene significado dentro de la función en que se declara. En JavaScript, las variables se evalúan como si se declararan al principio del ámbito en el que existen.  Por este motivo, en ocasiones se producen resultados inesperados.<a href="#r5">[5]</a></ul>
+		<li id="question">¿Qué método de String se puede utilizar para buscar patrones con expresiones regulares?¿Para qué podrías utilizar esto en una aplicación web?</li>
+		<ul>El método <i>match()</i> busca en una cadena una coincidencia con una expresión regular y devuelve las coincidencias como un objeto Array.<a href="#r6">[6]</a> El uso que yo le daría a este método, sería para buscar palabras específicas dentro de una aplicación web, por ejemplo, si quiero buscar dentro de un documento la palabra "impuestos", esperaría que me devolviera todas las coincidencias que hay de esa búsqueda, y así encontraría fácilmente lo que necesite.</ul><br/><br/>
+		<h4 class="bibliography" id="biblio">Bibliografía:</h4>
+		<ul id="r1">[1]Oracle, "How is JavaScript different from Java?", www.java.com, 2018. [Online]. Available: https://www.java.com/en/download/faq/java_javascript.xml [Accessed: 22-Jan-2018].</ul>
+		<ul id="r2">[2]Segue Technologies Inc., "Java vs. JavaScript: What’s the Difference?", www.seguetech.com, 2015. [Online]. Available: https://www.seguetech.com/java-vs-javascript-difference/ [Accessed: 22-Jan-2018].</ul>
+		<ul id="r3">[3]W3Schools, "JavaScript Date Methods", www.w3schools.com, 2018. [Online]. Available: https://www.w3schools.com/js/js_date_methods.asp [Accessed: 22-Jan-2018].</ul>
+		<ul id="r4">[4]W3Schools, "JavaScript Array Reference", www.w3schools.com, 2018. [Online]. Available: https://www.w3schools.com/jsref/jsref_obj_array.asp [Accessed: 22-Jan-2018].</ul>
+		<ul id="r5">[5]Microsoft, "Ámbito de la variable (JavaScript)", msdn.microsoft.com, 2018. [Online]. Available: https://msdn.microsoft.com/es-es/library/bzt2dkta(v=vs.94).aspx [Accessed: 22-Jan-2018].</ul>
+		<ul id=r6"">[6]W3Schools, "JavaScript String Reference", www.w3schools.com, 2018. [Online]. Available: https://www.w3schools.com/jsref/jsref_obj_string.asp [Accessed: 22-Jan-2018].</ul><br/>
+	</section>
+	<footer id="footerLabs">
+		<ul class="footerStyle">Michelle Fernanda Anguiano Juárez | A01209529</ul>
+		<ul class="footerStyle">A01209529@itesm.mx | michanguiano@gmail.com</ul>
+		<ul class="footerStyle">Editado con <a href="http://www.sublimetext.com" class="footerStyle" target="_blank">Sublime Text</a></ul>
+	</footer>
+	<script type="text/javascript" src="functions.js"></script>
+	<script type="text/javascript" src="lab4.js"></script>
+</body>
+</html>

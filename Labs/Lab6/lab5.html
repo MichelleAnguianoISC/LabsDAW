@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Lab 5</title>
+	<link rel="stylesheet" type="text/css" href="styles.css">
+	<link href="https://fonts.googleapis.com/css?family=Delius|Delius+Unicase" rel="stylesheet">
+</head>
+<body>
+	<div id="mySidenav" class="sidenav">
+		<a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+		<a href="index.html">Inicio</a>
+		<a href="lab1.html">Lab 1</a>
+		<a href="investigacion1.html">Investigación 1</a>
+		<a href="lab3.html">Lab 3</a>
+		<a href="lab4.html">Lab 4</a>
+		<a href="lab6.html">Lab 6</a>
+	</div>
+	<span style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776; MENÚ</span>
+	<header class="headerStyle"><h1 class="headerStyle">Lab 5: Programación Orientada a Eventos</h1></header>
+	<section class="importantInfo">
+		<table>
+			<tbody>
+				<tr>
+					<td>
+						<img src="images\n1.png" id="num1" /><br/>
+						<button onclick="createTable();">Click me!</button> 
+					</td>
+					<td>
+						<img src="images\n2.png" id="num2" /><br/>
+						<button onclick="sumTwoNumbers();">Click me!</button> 
+					</td>
+					<td>
+						<img src="images\n3.png" id="num2" /><br/>
+						<button onclick="readArray();">Click me!</button> 
+					</td>
+					<td>
+						<img src="images\n4.png" id="num4" /><br/>
+						<button onclick="average();">Click me!</button> 
+					</td>
+					<td >
+						<img src="images\n5.png" id="num4" /><br/>
+						<button onclick="inverse();">Click me!</button> 
+					</td>
+				</tr>
+				<tr>
+					<td colspan="5">
+						<h3>Respuestas:</h3>
+						<table id="table"></table>
+                    	<p id="answer"></p>
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<img src="images\n6.png" id="num4" /><br/>
+					</td>
+					<td>
+						<p>Ingresa el texto que deseas encriptar ↡</p>
+						<input type="text" id="encryptionInput">
+					</td>
+					<td colspan="2">
+						<button onclick="encrypt();">Encriptar</button>
+					</td>
+					<td>
+						<textarea id="encryptionOutput"></textarea>
+					</td>
+				</tr>
+			</tbody>
+		</table>
+		<h3 class="info">Preguntas a responder</h3>
+		<li id="question">¿Por qué es una buena práctica usar JavaScript para checar que sean válidos los inputs de las formas antes de enviar los datos al servidor?</li>
+			<ul>Para ejecutar la validación por parte del cliente siempre debemos recurrir a scripts, habitualmente en lenguaje JavaScript o emplear alguna librería para verificar que las entradas son del tipo correcto y que estén completas con datos, antes de que el formulario sea enviado. Esto facilita la programación y mejora de la interfaz del usuario.<a href="#r1">[1]</a></ul>
+		</li>
+		<li id="question">¿Cómo puedes saltarte la seguridad de validaciones hechas con JavaScript?</li>
+			<ul>Existen diferentes maneras de hacerlo, la más común es desactivando JavaScript. Otra forma es introducir un valor benigno en el campo de entrada en el navegador, interceptar el envío validado con su proxy y modificar los datos a su valor deseado.<a href="#r2">[2]</a></ul>
+		<li id="question">Si te puedes saltar la seguridad de las validaciones de JavaScript, entonces ¿por qué la primera pregunta dice que es una buena práctica?</li>
+			<ul>Como usuario se tiene una mejor experiencia con la interfaz, ya que no tendría problemas para ingresar los datos que le solicitan y como programador, es más fácil a la hora de enviar la información al servidor, para no recibir ningun error de ese lado, es mejor que ocurra en JavaScript que en la comunicación.</ul><br/><br/>
+		<h4 class="bibliography" id="biblio">Bibliografía:</h4>
+		<ul id="r1">[1]Universidad de Murcia, "DAWeb. Verificación de formularios", www.um.es, 2018. [Online]. Available: http://www.um.es/docencia/barzana/DAWEB/Desarrollo-de-aplicaciones-web-teoria-formularios-ejemplo-1.html [Accessed: 29-Jan-2018].</ul>
+		<ul id="r2">[2]PortSwigger Ltd., "Using Burp to Bypass Client Side JavaScript Validation", portswigger.net, 2018. [Online]. Available: https://support.portswigger.net/customer/portal/articles/1964212-using-burp-to-bypass-client-side-javascript-validation [Accessed: 29-Jan-2018].</ul><br/>
+	</section>
+	<footer id="footerLabs">
+		<ul class="footerStyle">Michelle Fernanda Anguiano Juárez | A01209529</ul>
+		<ul class="footerStyle">A01209529@itesm.mx | michanguiano@gmail.com</ul>
+		<ul class="footerStyle">Editado con <a href="http://www.sublimetext.com" class="footerStyle" target="_blank">Sublime Text</a></ul>
+	</footer>
+	<script type="text/javascript" src="functions.js"></script>
+	<script type="text/javascript" src="lab4.js"></script>
+</body>
+</html>

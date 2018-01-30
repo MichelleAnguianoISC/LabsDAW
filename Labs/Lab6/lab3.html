@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Lab 3</title>
+	<link rel="stylesheet" type="text/css" href="styles.css">
+	<link href="https://fonts.googleapis.com/css?family=Delius|Delius+Unicase" rel="stylesheet">
+</head>
+<body>
+	<div id="mySidenav" class="sidenav">
+		<a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+		<a href="index.html">Inicio</a>
+		<a href="lab1.html">Lab 1</a>
+		<a href="investigacion1.html">Investigación 1</a>
+		<a href="lab4.html">Lab 4</a>
+		<a href="lab5.html">Lab 5</a>
+		<a href="lab6.html">Lab 6</a>
+	</div>
+	<span style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776; MENÚ</span>
+	<header class="headerStyle"><h1 class="headerStyle">Lab 3: CSS</h1></header>
+	<section id="recomends">
+		<h3 class="recom">Recomendaciones</h3>
+		<li id="question">Como ingeniero de software, ¿cuál es tu recomendación sobre el uso de <i>!important</i> en un CSS?</li>
+		<ul>Recomiendo usarlo lo menos posible, y si puede ser evitado, mejor. Como ingenieros es nuestro deber estructurar correctamente nuestros archivos, siempre pensando en el orden en el cual estamos programando nuestra página web, para evitar superponer estilos encima de otros, y solamente usar esta propiedad cuando sea realmente necesaria.</ul>
+		<li id="question">Si se pone una imagen de fondo en una página HTML, ¿por qué debe escogerse con cuidado?</li>
+		<ul>Es importante tomarse el tiempo adecuado para hacerlo porque debe tener una correcta visualización con todos los elementos que serán puestos dentro de la página. Si no se escoge una imagen que combine con el estilo de la página, puede resultar perjudicial visualmente para los usuarios, provocando así un desinterés por seguir navegando en ella.</ul>
+		<li id="question">Como ingeniero de software, ¿cuál es tu recomendación al elegir las unidades de un propiedad de estilo entre %, px y pt?</li>
+		<ul>Mi recomendación sería utilizarlas de acuerdo a las necesidades, por ejemplo, la unidad de pixeles (px) son relativos al dispositivo de visualización, lo que significa que si utilizamos esta unidad en nuestro CSS, no sería igual visualmente en un dispositivo móvil, que en una computadora. La unidad (pt) representa puntos en la pantalla y la unidad (%) representa unidades de longitud relativa, las cuales especifican una longitud de esta naturaleza a otra propiedad de longitud. Éstas escalan mejor entre diferentes medios de representación.[1] En resumen, recomendaría utilizar la porcentual, ya que se adapta mejor a diferentes medios, pero siempre se pueden usar según convenga en cada caso.</ul>
+		<li id="question">¿Por qué el uso de una versión minimizada del CSS mejora el rendimiento del sitio?</li>
+		<ul>Para el navegador no hay diferencia en la estructura del código en nuestro archivo CSS, ya que lo que busca es descargar rápidamente las hojas de estilo para que pueda ser capaz de aplicar los estilos lo antes posible. Es por ello que se recomienda que no ocupen más de 100kb por archivo CSS, para evitar frustración en el usuario final y que pueda visualizar lo más pronto posible la página web a la que desea acceder.[2]</ul><br/>
+	</section>
+	<div id="recomends">
+		<h4 class="bibliography recom">Bibliografía:</h4>
+		<ul id="b1">[1]"CSS Units", w3schools.com, 2018. [Online]. Available: https://www.w3schools.com/cssref/css_units.asp [Accessed: 18- Jan- 2018].</ul>
+		<ul id="b2">[2]"Optimización CSS para mejorar el rendimiento de tu web", aukera.es, 2018. [Online]. Available: https://aukera.es/blog/optimizacion-css-mejora-el-rendimiento-de-tu-web/#comprimir-hojas-de-estilo [Accessed: 18- Jan- 2018].</ul><br/>
+	</div>
+	<footer id="footerLabs">
+		<ul class="footerStyle">Michelle Fernanda Anguiano Juárez | A01209529</ul>
+		<ul class="footerStyle">A01209529@itesm.mx | michanguiano@gmail.com</ul>
+		<ul class="footerStyle">Editado con <a href="http://www.sublimetext.com" class="footerStyle" target="_blank">Sublime Text</a></ul>
+	</footer>
+	<script type="text/javascript" src="functions.js"></script>
+</body>
+</html>
