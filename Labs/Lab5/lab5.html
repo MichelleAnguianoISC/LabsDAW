@@ -28,21 +28,32 @@
 					</td>
 					<td>
 						<h3>Password Validator</h3>
-						<ul>
-							<label>User: </label>
-							<input type="text" name="userExample">
-						</ul>
-						<ul>
+						<form onsubmit="return checkForm(this);">
+							<label>Username: </label>
+							<input type="text" name="username"><br/>
 							<label>Password: </label>
-							<input type="password" name="passwordExample">
-						</ul>
-						<ul>
+							<input type="password" name="pwd1"><br/>
 							<label>Confirm password: </label>
-							<input type="password" name="passwordConfirmation">
-						</ul>
-						<ul>
-							<button type="button">Submit</button>
-						</ul>
+							<input type="password" name="pwd2"><br/>
+							<input type="submit" name="submit">
+						</form>
+					</td>
+					<td>
+						<label id="missing">
+							<img src="images\checkbox.png" id="checkBox" />Username: solo letras, números y guión bajo<br/>
+						</label>
+						<label id="missing">
+							<img src="images\checkbox.png" id="checkBox" />Password: al menos 8 caracteres<br/>
+						</label>
+						<label id="missing">
+							<img src="images\checkbox.png" id="checkBox" />Password: al menos un número<br/>
+						</label>
+						<label id="missing">
+							<img src="images\checkbox.png" id="checkBox" />Password: al menos una letra minúscula<br/>
+						</label>
+						<label id="missing">
+							<img src="images\checkbox.png" id="checkBox" />Password: al menos una letra mayúscula<br/>
+						</label>
 					</td>
 				</tr>
 				<tr>
@@ -81,6 +92,6 @@
 		<ul class="footerStyle">Editado con <a href="http://www.sublimetext.com" class="footerStyle" target="_blank">Sublime Text</a></ul>
 	</footer>
 	<script type="text/javascript" src="functions.js"></script>
-	<script type="text/javascript" src="lab4.js"></script>
+	<script type="text/javascript" src="passwordValidation.js"></script>
 </body>
 </html>

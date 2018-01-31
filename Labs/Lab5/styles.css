@@ -158,7 +158,7 @@ h4.bibliography {
 
 #num1 {
 	height: 100px;
-	width: 55px;
+	width: 60px;
 	border: 0px;
 }
 
@@ -172,6 +172,17 @@ h4.bibliography {
 	height: 100px;
 	width: 75px;
 	border: 0px;
+}
+
+#checkBox {
+	height: 20px;
+	width: 20px;
+	border: 0px;
+}
+
+#missing {
+	color: black;
+	text-align: left;
 }
 
 #passV {
