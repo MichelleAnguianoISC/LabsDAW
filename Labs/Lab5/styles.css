@@ -130,13 +130,6 @@ h4.bibliography {
 	padding-top: 20px;
 }
 
-#final {
-	color: #39f;
-	text-align:center;
-	font-family: Delius Unicase, cursive;
-	font-weight:bold;
-}
-
 #question {
 
 	font-weight: bold;
@@ -181,7 +174,6 @@ h4.bibliography {
 }
 
 #missing {
-	color: black;
 	text-align: left;
 }
 
