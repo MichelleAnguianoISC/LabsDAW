@@ -180,3 +180,13 @@ h4.bibliography {
 #passV {
 	text-align: left;
 }
+
+#cases {
+	height: 180px;
+	width: 120px;
+	border: 0px;
+}
+
+#smallLetters {
+	font-size: 7px;
+}
