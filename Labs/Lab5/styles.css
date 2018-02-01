@@ -130,6 +130,10 @@ h4.bibliography {
 	padding-top: 20px;
 }
 
+table.shopping {
+	font-size: 10px;
+}
+
 #question {
 
 	font-weight: bold;
@@ -189,4 +193,10 @@ h4.bibliography {
 
 #smallLetters {
 	font-size: 7px;
+}
+
+#cart {
+	height: 50px;
+	width: 50px;
+	border: 0px;
 }

@@ -40,19 +40,19 @@
 					</td>
 					<td>
 						<label id="missing">
-							<img src="images\checkbox.png" id="checkBox" />Username: solo letras, números y guión bajo<br/>
+							<img src="images\checkbox.png" id="checkBox" alt="Checkbox"/>Username: solo letras, números y guión bajo<br/>
 						</label>
 						<label id="missing">
-							<img src="images\checkbox.png" id="checkBox" />Password: al menos 8 caracteres<br/>
+							<img src="images\checkbox.png" id="checkBox" alt="Checkbox"/>Password: al menos 8 caracteres<br/>
 						</label>
 						<label id="missing">
-							<img src="images\checkbox.png" id="checkBox" />Password: al menos un número<br/>
+							<img src="images\checkbox.png" id="checkBox" alt="Checkbox"/>Password: al menos un número<br/>
 						</label>
 						<label id="missing">
-							<img src="images\checkbox.png" id="checkBox" />Password: al menos una letra minúscula<br/>
+							<img src="images\checkbox.png" id="checkBox" alt="Checkbox"/>Password: al menos una letra minúscula<br/>
 						</label>
 						<label id="missing">
-							<img src="images\checkbox.png" id="checkBox" />Password: al menos una letra mayúscula<br/>
+							<img src="images\checkbox.png" id="checkBox" alt="Checkbox"/>Password: al menos una letra mayúscula<br/>
 						</label>
 					</td>
 				</tr>
@@ -62,17 +62,55 @@
 					</td>
 					<td>
 						<h3>Shop</h3>
+						<img id="cart" src="images\shopping.jpg" alt="Shopping Cart"/><br/>
+						<label>Carrito de compras<br/></label>
+						<table class="shopping">
+							<tbody>
+								<th>Producto</th>
+								<th>Cantidad</th>
+								<tr>
+									<td>Red Glitter Lips Case</td>
+									<td>0</td>
+								</tr>
+								<tr>
+									<td>Green Glitter Lips Case</td>
+									<td>0</td>
+								</tr>
+								<tr>
+									<td>Pink Lips Case</td>
+									<td>0</td>
+								</tr>
+							</tbody>
+						</table><br/>
+						<label>Subtotal: </label><label id="">$0</label><br/>
+						<label>IVA: </label><label>$0</label><br/>
+						<label>TOTAL: </label><label id="total_price">$0</label>
 					</td>
 					<td id="smallLetters">
-						<img id="cases" src="images\redCase.jpg" /><br/>
+						<img id="cases" src="images\redCase.jpg" alt="Red Glitter Lips Case"/><br/>
 						<label>Red Glitter Lips Case</label><br/>
 						<label>$850 MXN</label><br/>
-						<img id="cases" src="images\greenCase.jpg" /><br/>
+						<form>
+							<label>Cantidad: </label>
+							<input type="number" name="quantity" min="1" max="5"><br/>
+							<button id="addCart" type="submit">Agregar</button>
+						</form><br/>
+						<img id="cases" src="images\greenCase.jpg" alt="Green Glitter Lips Case"/><br/>
 						<label>Green Glitter Lips Case</label><br/>
 						<label>$750 MXN</label><br/>
-						<img id="cases" src="images\pinkCase.jpg" /><br/>
+						<form>
+							<label>Cantidad: </label>
+							<input type="number" name="quantity" min="1" max="5"><br/>
+							<button type="submit">Agregar</button>
+						</form><br/>
+						<img id="cases" src="images\pinkCase.jpg" alt="Pink Lips Case"/><br/>
 						<label>Pink Lips Case</label><br/>
 						<label>$700 MXN</label><br/>
+						<form>
+							<label>Cantidad: </label>
+							<input type="number" name="quantity" min="1" max="5"><br/>
+							<button type="submit">Agregar</button>
+						</form>
 					</td>
 				</tr>
 				<tr>
