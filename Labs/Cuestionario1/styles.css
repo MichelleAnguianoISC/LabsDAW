@@ -130,8 +130,11 @@ h4.bibliography {
 	padding-top: 20px;
 }
 
-table.shopping {
-	font-size: 10px;
+#final {
+	color: #39f;
+	text-align:center;
+	font-family: Delius Unicase, cursive;
+	font-weight:bold;
 }
 
 #question {
@@ -151,52 +154,4 @@ table.shopping {
 	padding-top: 10px;
 	padding-bottom: 10px;
 	color: black;
-}
-
-#num1 {
-	height: 100px;
-	width: 60px;
-	border: 0px;
-}
-
-#num2 {
-	height: 100px;
-	width: 68px;
-	border: 0px;
-}
-
-#num4 {
-	height: 100px;
-	width: 75px;
-	border: 0px;
-}
-
-#checkBox {
-	height: 20px;
-	width: 20px;
-	border: 0px;
-}
-
-#missing {
-	text-align: left;
-}
-
-#passV {
-	text-align: left;
-}
-
-.cases {
-	height: 180px;
-	width: 120px;
-	border: 0px;
-}
-
-#smallLetters {
-	font-size: 7px;
-}
-
-#cart {
-	height: 50px;
-	width: 50px;
-	border: 0px;
 }

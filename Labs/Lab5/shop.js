@@ -11,23 +11,23 @@ function update_total_price() {
 var red_qty = document.getElementById('red_qty');
 red_qty.onchange = function () {
     let price = 1899;
-    city_total = Number(red_qty.value) * price;
-    total_price = city_total + psg_total + chivas_total + bayern_total;
+    red_total = Number(red_qty.value) * price;
+    total_price = red_total + green_total + pink_total + bayern_total;
     update_total_price();
 }
 
-var psg_qty = document.getElementById('psg_qty');
+var green_qty = document.getElementById('psg_qty');
 psg_qty.onchange = function () {
     let price = 1899;
-    psg_total = Number(psg_qty.value) * price;
-    total_price = city_total + psg_total + chivas_total + bayern_total;
+    green_total = Number(psg_qty.value) * price;
+    total_price = red_total + green_total + pink_total + bayern_total;
     update_total_price();
 }
 
-var chivas_qty = document.getElementById('chivas_qty');
-chivas_qty.onchange = function () {
+var pink_qty = document.getElementById('pink_qty');
+pink_qty.onchange = function () {
     let price = 1899;
-    chivas_total = Number(chivas_qty.value) * price;
-    total_price = city_total + psg_total + chivas_total + bayern_total;
+    pink_total = Number(pink_qty.value) * price;
+    total_price = red_total + green_total + pink_total + bayern_total;
     update_total_price();
 }
