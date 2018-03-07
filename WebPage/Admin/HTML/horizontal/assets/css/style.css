@@ -924,6 +924,11 @@ a.btn:focus {
   background-color: #1bb99a;
   border-color: #1bb99a; }
 
+.btn-success-login {
+  background-color: #a20000;
+  border-color: #a20000; 
+  color: white;}
+
 .btn-success:hover, .btn-success:focus, .btn-success:active, .btn-success.active,
 .btn-success.focus, .btn-success:active, .btn-success:focus, .btn-success:hover,
 .open > .dropdown-toggle.btn-success {
@@ -18691,15 +18696,25 @@ div.hopscotch-bubble .hopscotch-bubble-arrow-container.down .hopscotch-bubble-ar
    Accounts pages
 ============= */
 .account-pages {
-  /*background: #64b0f2;*/
-  background-color: #cccccc;
-    background-image: radial-gradient(red, yellow);
+  background: #64b0f2;
   position: absolute;
   top: 0;
   bottom: 0;
   right: 0;
   left: 0;
-  background-size: cover; }
+  background-size: cover; 
+}
+
+.account-pages-login {
+  background-color: #cccccc;
+  background-image: url("/assets/images/loginBG.jpg");
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  background-size: cover; 
+}
 
 .wrapper-page {
   margin: 5% auto;
@@ -18713,6 +18728,9 @@ div.hopscotch-bubble .hopscotch-bubble-arrow-container.down .hopscotch-bubble-ar
   .wrapper-page .card-box {
     box-shadow: 0 0px 24px 0 rgba(0, 0, 0, 0.06), 0 1px 0px 0 rgba(0, 0, 0, 0.02);
     border: 5px solid #64b0f2; }
+  .wrapper-page .card-box-login {
+    box-shadow: 0 0px 24px 0 rgba(0, 0, 0, 0.06), 0 1px 0px 0 rgba(0, 0, 0, 0.02);
+    border: 5px solid #a20000; }
   .wrapper-page .logo {
     font-size: 24px;
     line-height: 36px;
