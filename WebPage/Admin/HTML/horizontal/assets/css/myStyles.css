@@ -12,3 +12,12 @@
 	width: 30px;
 	height: 30px;
 }
+
+.reservePax {
+	width: 45px;
+	height: 35px;
+}
+
+.requiredField {
+	color: red;
+}
