@@ -18,6 +18,21 @@
 	height: 35px;
 }
 
+.planeIcons {
+	width: 35px;
+	height: 25px;
+}
+
+.petIcon {
+	width: 25px;
+	height: 25px;
+}
+
 .requiredField {
 	color: red;
+}
+
+.paxNumReserve {
+	color: dimgrey;
+	font-size: 20px;
 }

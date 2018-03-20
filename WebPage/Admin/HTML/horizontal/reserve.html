@@ -170,45 +170,122 @@
                                         <h3>Service Information</h3>
                                         <section>
                                             <div class="form-group row">
-                                                <label class="col-lg-2 control-label">Select Trip Type</label>
-                                                <button type="button" class="btn btn-outline-custom waves-effect waves-light"><img src="assets/images/takingOffPlane.png" class="reservePax">&nbsp;&nbsp;&nbsp;&nbsp;To Airport</button>&nbsp;&nbsp;&nbsp;&nbsp;
-                                                <button type="button" class="btn btn-outline-custom waves-effect waves-light"><img src="assets/images/landingPlane.png" class="reservePax">&nbsp;&nbsp;&nbsp;&nbsp;From Airport</button>
-                                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                                                <div class="checkbox checkbox-primary">
-                                                    <input id="checkbox2" type="checkbox" checked>
-                                                    <label for="checkbox2">
-                                                        Round-trip
+                                                <label class="col-lg-2 control-label">Select Trip Type <font color="red">*</font></label>
+                                                <div class="btn-group" data-toggle="buttons">
+                                                    <label class="btn btn-outline-primary waves-effect waves-light active">
+                                                        <input type="radio" name="options" id="pickUpSelection" autocomplete="off"
+                                                               checked>
+                                                               <img src="assets/images/landingPlane.png" class="planeIcons">&nbsp;&nbsp;&nbsp;From Airport
+                                                    </label>
+                                                    <label class="btn btn-outline-primary waves-effect waves-light">
+                                                        <input type="radio" name="options" id="dropOffSelection" autocomplete="off" onselect="departure();">
+                                                        <img src="assets/images/takingOffPlane.png" class="planeIcons">&nbsp;&nbsp;&nbsp;To Airport
                                                     </label>
                                                 </div>
-                                                <!--<div class="col-lg-10">
-                                                    <input class="form-control required" id="userName1" name="userName" type="text">
-                                                </div>-->
+                                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                                <label>Round Trip</label>&nbsp;&nbsp;&nbsp;
+                                                <div class="btn-group" data-toggle="buttons">
+                                                    <label class="btn btn-outline-success waves-effect waves-light active">
+                                                        <input type="radio" name="options" id="pickUpSelection" autocomplete="off"
+                                                               checked>Yes
+                                                    </label>
+                                                    <label class="btn btn-outline-danger waves-effect waves-light">
+                                                        <input type="radio" name="options" id="dropOffSelection" autocomplete="off">No
+                                                    </label>
+                                                </div>
                                             </div>
                                             <div class="form-group row">
-                                                <label class="col-lg-2 control-label">Select Airport</label>
-                                                <div class="btn-group">
-                                                    <button type="button" class="btn btn-secondary dropdown-toggle  waves-effect" data-toggle="dropdown" aria-expanded="false">Airports<span class="caret"></span> </button>
-                                                    <div class="dropdown-menu">
-                                                        <a class="dropdown-item">Queretaro Airport</a>
-                                                    </div>
+                                                <label class="control-label">Select Airport <font color="red">*</font></label>
+                                                <div class="col-lg-4">
+                                                    <select class="form-control" id="airportChoices">
+                                                        <option>Leon Airport</option>
+                                                        <option>Queretaro Airport</option>
+                                                        <option>Mexico City Airport</option>
+                                                        <option>Celaya Airport</option>
+                                                        <option>San Luis Potosi Airport</option>
+                                                        <option>Guadalajara Airport</option>
+                                                        <option>Particular Address</option>
+                                                        <option>Other</option>
+                                                    </select>
                                                 </div>
-                                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                                                <img src="assets/images/paxIcon.png" class="reservePax">
-                                                <input type="number" name="pax" min="1">
-                                                <button class="btn waves-effect waves-light btn-primary disabled"> <i class="zmdi zmdi-plus"></i></button>&nbsp;&nbsp;
-                                                <button class="btn waves-effect waves-light btn-danger disabled"> <i class="zmdi zmdi-minus"></i></button>
+                                                <label class="control-label" for="numAdults">Adults <font color="red">*</font></label>
+                                                <div class="col-lg-2">
+                                                    <input id="numAdults" name="numAdults" type="number" class="form-control bfh-number" min="1" max="100" value="1">
+                                                </div>
+                                                <label class="control-label" for="numChildren">Children <font color="red">*</font></label>
+                                                <div class="col-lg-2">
+                                                    <input id="numChildren" name="numChildren" type="number" class="form-control bfh-number" min="0" max="100" value="0">
+                                                </div>
                                             </div>
-
-                                            <div class="form-group row" id="pickUpAddress">
-                                                <label class="col-lg-2 control-label " for="address1">Pick-up Address <font color="red">*</font></label>
+                                            <div class="form-group row" id="arrivalDateTimePets">
+                                                <label class="col-lg-2 control-label" for="arrivalDate">Arrival Date <font color="red">*</font></label>
+                                                <div class="col-lg-4">
+                                                    <input id="arrivalDate" name="arrivalDate" type="date" class="form-control" placeholder="dd/mm/yyyy">
+                                                </div>
+                                                <label class="control-label" for="arrivalTime">Arrival Time <font color="red">*</font></label>
+                                                <div class="col-lg-2">
+                                                    <input id="arrivalTime" name="arrivalTime" type="time" class="form-control" placeholder="13:45:00">
+                                                </div>&nbsp;&nbsp;&nbsp;&nbsp;
+                                                <div class="checkbox checkbox-success checkbox-inline">
+                                                    <input type="checkbox" id="petsOptionArrival" checked>
+                                                    <label class="col-lg-1" for="petsOptionArrival"><img src="assets/images/petIcon.png" class="petIcon">Pets</label>
+                                                </div>
+                                            </div>
+                                            <div class="form-group row" id="departureDateTimePets">
+                                                <label class="col-lg-2 control-label" for="departureDate">Departure Date <font color="red">*</font></label>
+                                                <div class="col-lg-4">
+                                                    <input id="departureDate" name="departureDate" type="date" class="form-control" placeholder="dd/mm/yyyy">
+                                                </div>
+                                                <label class="control-label" for="departureTime">Departure Time <font color="red">*</font></label>
+                                                <div class="col-lg-2">
+                                                    <input id="departureTime" name="departureTime" type="time" class="form-control" placeholder="13:45:00">
+                                                </div>&nbsp;&nbsp;&nbsp;&nbsp;
+                                                <div class="checkbox checkbox-success checkbox-inline">
+                                                    <input type="checkbox" id="petsOptionDeparture" checked>
+                                                    <label class="col-lg-1" for="petsOptionDeparture"><img src="assets/images/petIcon.png" class="petIcon">Pets</label>
+                                                </div>
+                                            </div>
+                                            <div class="form-group row">
+                                                <label class="col-lg-2 control-label " for="dropOffAddress">Drop-Off Address <font color="red">*</font></label>
+                                                <div class="col-lg-10">
+                                                    <input id="dropOffAddress" name="address" type="text" class="form-control" placeholder="Rosewood Hotel, Mesones #51, Casa de la Paz">
+                                                </div>
+                                            </div>
+                                            <div class="form-group row">
+                                                <label class="col-lg-2 control-label " for="pickUpAddress">Pick-up Address <font color="red">*</font></label>
                                                 <div class="col-lg-10">
                                                     <input id="pickUpAddress" name="address" type="text" class="form-control" placeholder="Rosewood Hotel, Mesones #51, Casa de la Paz">
                                                 </div>
                                             </div>
-                                            <div class="form-group row" id="dropOffAddress">
-                                                <label class="col-lg-2 control-label " for="address1">Drop-off Address <font color="red">*</font></label>
+                                            <div class="form-group row">
+                                                <label class="col-lg-2 control-label">Airline <font color="red">*</font></label>
+                                                <div class="col-lg-6">
+                                                    <input id="airlineInfo" name="airlineInfo" type="text" class="form-control" placeholder="AAL, United Airlines, Y4, AMX, Volaris">
+                                                </div>
+                                                <label class="control-label" for="flightNum">Flight # <font color="red">*</font></label>
+                                                <div class="col-lg-2">
+                                                    <input id="flightNum" name="flightNum" type="text" class="form-control" placeholder="1586">
+                                                </div>
+                                            </div>
+                                            <div class="form-group row">
+                                                <label class="col-lg-2 control-label " for="vehicleChoices">Vehicle Type <font color="red">*</font></label>
+                                                <div class="col-lg-4">
+                                                    <select class="form-control" id="vehicleChoices">
+                                                        <option>Sedan</option>
+                                                        <option>Suburban</option>
+                                                        <option>Sprinter 10 pax</option>
+                                                        <option>Sprinter 16 pax</option>
+                                                    </select>
+                                                </div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                                <label class="control-label" for="piecesLuggage">Pieces of Luggage <font color="red">*</font></label>
+                                                <div class="col-lg-2">
+                                                    <input id="piecesLuggage" name="piecesLuggage" type="number" class="form-control" min="0" max="100" value="0">
+                                                </div>
+                                            </div>
+                                            <div class="form-group row">
+                                                <label class="col-lg-2 control-label " for="reservationComments">Additional Comments <font color="red">*</font></label>
                                                 <div class="col-lg-10">
-                                                    <input id="dropOffAddressBox" name="address" type="text" class="form-control" placeholder="Rosewood Hotel, Mesones #51, Casa de la Paz">
+                                                    <textarea class="form-control" rows="6" id="reservationComments" placeholder="i.e. We would like to stop at Guanajuato before arrival, we would like two vehicles, we are not perfume tolerant."></textarea>
                                                 </div>
                                             </div>
                                             <div class="form-group row">
