@@ -1,8 +1,10 @@
-$('.selectpicker').selectpicker({
-  style: 'btn-info',
-  size: 4
-});
+function arrivalSelection(){
+  document.getElementById('div1').style.display ='none';
+  console.log("arrivalSelection");
+}
 
-if( /Android|webOS|iPhone|iPad|iPod|BlackBerry/i.test(navigator.userAgent) ) {
-  $('.selectpicker').selectpicker('mobile');
+function departureSelection(){
+  document.getElementById('departureDateTimePets').style.display = 'block';
+  document.getElementById('arrivalDateTimePets').style.display ='none';
+  console.log("departureSelection");
 }
